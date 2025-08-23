@@ -11,11 +11,10 @@ main { display:grid; grid-template-columns: repeat(5, 1fr); gap:12px; padding:16
 .sig { padding:3px 8px; border-radius:999px; border:1px solid #3a445a; font-size:12px; }
 .sig.call { background: rgba(60,179,113,0.15); border-color:#3cb371; }
 .sig.put { background: rgba(231,76,60,0.15); border-color:#e74c3c; }
-.sig.no { background: rgba(128,128,128,0.15); border-color:#666; }
 .row { display:grid; grid-template-columns: repeat(4, 1fr); gap:6px; font-size:12px; }
 .kv { background:#111624; border:1px solid #1e2636; padding:6px; border-radius:6px; display:flex; justify-content:space-between; }
 .candle { display:flex; justify-content:center; align-items:center; height:100px; margin:8px 0; }
 .candle img { width:40px; height:80px; }
 .reason { font-size:12px; color:#a6b3c2; }
-@media (max-width:1100px){ main { grid-template-columns: repeat(2, 1fr);} }
+@media (max-width:1100px){ main { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width:700px){ main { grid-template-columns: 1fr; } }

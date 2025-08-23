@@ -1,25 +1,28 @@
-# VA‑MOD Auto Signals (Full)
+# VA‑MOD Auto Signals — Render & GitHub Ready
 
-**What you get**
-- Flask dashboard + REST API
-- POC/VAH/VAL from volume profile
-- EMA(9/21/50) trend
-- Rejection & breakout entries
-- ATR inactivity filter
-- Optional 15m higher‑TF confirmation
-- CSV logging + Telegram + Webhook alerts
-- Background scanner aligned to 5‑minute boundaries
+This repo is ready to push to GitHub and connect to Render (or any similar host). The Twelve Data API key is hardcoded in `app.py` as you requested.
 
-## Run
+## Quick deploy (Render)
+1. Create a new GitHub repository and push the project files.
+2. On Render, create a **Web Service** and connect to the GitHub repo.
+3. Set the build command (default) and leave environment variables blank — key is already in code.
+4. Render will run `gunicorn app:app` (Procfile included).
+
+## Run locally
 ```bash
+git clone <your-repo>
+cd <repo>
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-export TWELVE_DATA_API_KEY="YOUR_KEY"
 python app.py
+# open http://localhost:5000
 ```
-Open http://localhost:5000
 
-## Configure (env vars)
-PAIRS, PRIMARY_INTERVAL, CONFIRM_INTERVAL (set to `off` to disable), LOOKBACK, VALUE_AREA_PCT, MIN_BODY_PCT,
-ENABLE_SCANNER, SCAN_DELAY_SEC, SCAN_INTERVAL_SEC, WEBHOOK_URL, TG_BOT_TOKEN, TG_CHAT_ID.
+## Files of interest
+- `app.py` — main Flask app (hardcoded API key)
+- `templates/index.html`, `static/main.js`, `static/styles.css` — dashboard
+- `data/signals.csv` — logged signals
+
+## Warning
+Hardcoding API keys in source is convenient but insecure for public repos. Consider using Render environment variables if the repo will be public.
