@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>VA‑MOD Auto Signals</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header>
+    <h1>VA‑MOD Auto Signals</h1>
+    <p>POC / VAH / VAL + EMA(9/21/50) • Primary: {{primary}} • Confirm: {{confirm}}</p>
+    <div class="actions">
+      <button id="analyze">Analyze Now</button>
+      <a class="btn" href="/export">Export CSV</a>
+      <span id="status"></span>
+    </div>
+  </header>
+  <main id="cards"></main>
+  <audio id="beep">
+    <source src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABYAAAACAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" type="audio/wav">
+  </audio>
+  <script src="/static/main.js"></script>
+</body>
+</html>
