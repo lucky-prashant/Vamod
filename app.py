@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 # ---------- Config (hardcoded for GitHub/Render deploy) ----------
 API_KEY = "b7ea33d435964da0b0a65b1c6a029891"  # hardcoded Twelve Data API key as requested
-PAIRS = ["EUR/USD", "GBP/USD", "USD/JPY", "EUR/JPY", "AUD/CAD"]
+PAIRS = ["EUR/USD", "GBP/USD", "USD/JPY", "EUR/JPY", "AUD/USD"]
 PRIMARY_INTERVAL = "5min"
 CONFIRM_INTERVAL = "15min"  # set to "off" to disable confirmation
 CONFIRM_ENABLE = CONFIRM_INTERVAL.lower() not in ("", "off", "none")
